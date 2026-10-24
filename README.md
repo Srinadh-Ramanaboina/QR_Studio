@@ -1,20 +1,12 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# QR_Studio
 
-# Run and deploy your AI Studio app
+QR Studio is an all-in-one QR code generator that lets users create, customize, scan, and download QR codes for websites, Wi-Fi, contacts, social media, and more. With real-time previews, custom designs, bulk generation, and high-quality exports, it makes QR code creation simple, fast, and professional.
 
-This contains everything you need to run your app locally.
+## Run locally
 
-View your app in AI Studio: https://ai.studio/apps/d6031c4a-b6f8-47f6-9f4d-bfc48c7ee888
+**Prerequisite:** Node.js
 
-## Run Locally
+1. Install dependencies: `npm install`
+2. Start the development server: `npm run dev`
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+View the project in [Google AI Studio](https://ai.studio/apps/d6031c4a-b6f8-47f6-9f4d-bfc48c7ee888).
