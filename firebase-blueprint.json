@@ -1,0 +1,85 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile information",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The user's unique Firebase Auth UID"
+        },
+        "email": {
+          "type": "string",
+          "description": "The user's email address"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The user's display name"
+        },
+        "photoURL": {
+          "type": "string",
+          "description": "The user's profile photo URL"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when account profile was created"
+        }
+      },
+      "required": ["userId", "email"]
+    },
+    "SavedQRCode": {
+      "title": "SavedQRCode",
+      "description": "A saved QR code belonging to a user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique QR item ID",
+          "maxLength": 128
+        },
+        "userId": {
+          "type": "string",
+          "description": "Owner user UID"
+        },
+        "title": {
+          "type": "string",
+          "description": "Title or label for the QR code",
+          "maxLength": 120
+        },
+        "type": {
+          "type": "string",
+          "description": "QR data type e.g. url, wifi, vcard, etc.",
+          "maxLength": 30
+        },
+        "payload": {
+          "type": "string",
+          "description": "Target payload or destination string",
+          "maxLength": 4096
+        },
+        "thumbnail": {
+          "type": "string",
+          "description": "Thumbnail preview string",
+          "maxLength": 150000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Creation timestamp"
+        }
+      },
+      "required": ["id", "userId", "title", "type", "payload"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private user profile document"
+    },
+    "/users/{userId}/qr_codes/{codeId}": {
+      "schema": { "$ref": "#/entities/SavedQRCode" },
+      "description": "User's personal saved QR codes subcollection"
+    }
+  }
+}

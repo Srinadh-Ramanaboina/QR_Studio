@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  /* Aurora Theme Palette Tokens */
+  --aurora-bg-primary: #0F1020;
+  --aurora-bg-secondary: #15162B;
+  --aurora-bg-card: #191B33;
+  --aurora-bg-elevated: #202341;
+  --aurora-purple: #A78BFA;
+  --aurora-blue: #60A5FA;
+  --aurora-cyan: #67E8F9;
+  --aurora-text-primary: #F1F5F9;
+  --aurora-text-secondary: #A1A1C2;
+  --aurora-border: #30324F;
+  --aurora-success: #34D399;
+  --aurora-error: #F87171;
+  --aurora-warning: #FBBF24;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--aurora-bg-primary);
+  color: var(--aurora-text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Aurora Gradient Utilities */
+.aurora-gradient-bg {
+  background: linear-gradient(135deg, #A78BFA 0%, #60A5FA 50%, #67E8F9 100%);
+}
+
+.aurora-gradient-text {
+  background: linear-gradient(135deg, #A78BFA 0%, #60A5FA 50%, #67E8F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.aurora-border-glow {
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  box-shadow: 0 0 24px -4px rgba(167, 139, 250, 0.25);
+}
+
+.aurora-card {
+  background: rgba(25, 27, 51, 0.85);
+  border: 1px solid #30324F;
+  backdrop-filter: blur(16px);
+}
+
+/* Dark mode inputs and form elements */
+.dark input[type="text"],
+.dark input[type="url"],
+.dark input[type="email"],
+.dark input[type="tel"],
+.dark input[type="password"],
+.dark input[type="number"],
+.dark input[type="datetime-local"],
+.dark textarea,
+.dark select {
+  background-color: #15162B !important;
+  color: #F1F5F9 !important;
+  border-color: #30324F !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #A1A1C2 !important;
+  opacity: 0.6;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: #A78BFA !important;
+  box-shadow: 0 0 0 2px rgba(167, 139, 250, 0.2) !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0F1020;
+}
+::-webkit-scrollbar-thumb {
+  background: #30324F;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A78BFA;
+}

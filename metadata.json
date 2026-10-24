@@ -1,0 +1,6 @@
+{
+  "name": "QR Studio",
+  "description": "Professional QR code generator, scanner, customizer, and bulk exporter. Generate vector SVG, high-res PNG, Wi-Fi, vCard, social, and custom branded QR codes instantly.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
